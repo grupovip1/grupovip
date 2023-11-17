@@ -23,6 +23,7 @@
       top: 64%; /* Ajusta a posição da imagem principal */
       left: 50%;
       transform: translate(-50%, -50%);
+      cursor: pointer; /* Muda o cursor para indicar que a imagem é clicável */
     }
 
     .imagem-sobreposta {
@@ -38,15 +39,25 @@
       max-width: 65%;
       height: auto;
       position: absolute;
-      top: 76%;
+      top: 80%;
       left: 50%;
       transform: translate(-50%, -50%);
     }
   </style>
+  <script>
+    function redirecionarParaIndex2() {
+      // Adiciona uma animação de click quando o botão é clicado
+      document.querySelector('.imagem-abaixo').style.transform = 'translate(-50%, -50%) scale(0.9)';
+      setTimeout(() => {
+        document.querySelector('.imagem-abaixo').style.transform = 'translate(-50%, -50%)';
+        window.location.href = 'index2.html'; // Redireciona para index2.html
+      }, 200); // Tempo da animação em milissegundos
+    }
+  </script>
 </head>
 <body>
   <img src="principal.jpg" alt="Imagem Principal">
   <img class="imagem-sobreposta" src="titulo2.png" alt="Imagem Sobreposta">
-  <img class="imagem-abaixo" src="botao.jpg" alt="Imagem Abaixo">
+  <img class="imagem-abaixo" src="botao.jpg" alt="Imagem Abaixo" onclick="redirecionarParaIndex2()">
 </body>
 </html>
