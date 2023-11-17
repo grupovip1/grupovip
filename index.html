@@ -12,72 +12,56 @@
       align-items: center;
       height: 100vh;
       background-color: black;
-      margin-top: 100px;
-      position: relative;
       color: white;
       text-align: center;
       font-size: 1em;
-      line-height: 1.8; /* Adiciona uma posição relativa ao body */
+      line-height: 1.8;
     }
 
     img {
-      max-width: 190%;
-      height: auto;
-      position: absolute; /* Permite posicionar a imagem absolutamente */
-      top: 70%; /* Posiciona a partir do topo */
-      left: 50%; /* Posiciona a partir da esquerda */
-      transform: translate(-50%, -50%); /* Centraliza a imagem */
-    
+      max-width: 100%; /* Ajustando o tamanho máximo das imagens */
     }
 
     .imagem-sobreposta {
       max-width: 70%; /* Largura da nova imagem */
-      height: auto;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
     }
 
     .imagem-abaixo {
       max-width: 67%; /* Largura da terceira imagem */
-      height: auto;
-      position: absolute;
-      top: 77%; /* Ajuste a posição para ficar abaixo da segunda imagem */
-      left: 50%;
-      transform: translate(-50%, -50%);
-      cursor: pointer; /* Adiciona um cursor de mão para indicar que é clicável */
-      animation: balanco 0.5s ease-in-out infinite alternate; /* Adiciona a animação de balanço */
-      animation-delay: 1s; /* Delay de 1 segundo para iniciar a animação */
+      cursor: pointer;
+      animation: balanco 0.5s ease-in-out infinite alternate;
+      animation-delay: 1s;
     }
 
+    @keyframes balanco {
+      0% { transform: translate(-50%, -50%) rotate(0deg); }
+      100% { transform: translate(-50%, -50%) rotate(4deg); }
+    }
 
     .clicado {
       animation: clicado 0.3s ease forwards;
     }
 
-  
+    @keyframes clicado {
+      100% { opacity: 0; transform: scale(0.8); }
+    }
   </style>
 </head>
 <body>
-  
-  <img src="principal.jpg" alt="Imagem Principal">
-  <img class="imagem-sobreposta" src="titulo2.png" alt="Imagem Sobreposta">
-  <img class="imagem-abaixo" src="botao.jpg" alt="Imagem Abaixo" id="botao">
+  <div class="container">
+    <img src="principal.jpg" alt="Imagem Principal">
+    <img class="imagem-sobreposta" src="titulo2.png" alt="Imagem Sobreposta">
+    <img class="imagem-abaixo" src="botao.jpg" alt="Imagem Abaixo" id="botao">
+  </div>
   
   <script>
-    // Obtém a referência para a imagem do botão
     const botao = document.getElementById('botao');
 
-    // Função para o redirecionamento quando o botão for clicado
     botao.addEventListener('click', function() {
-      // Adiciona a classe para a animação de clique
       botao.classList.add('clicado');
-
-      // Redireciona para o index2.html após um pequeno intervalo (300ms)
       setTimeout(function() {
         window.location.href = 'index2.html';
-      }, 300); // Tempo para a animação de clique antes do redirecionamento
+      }, 300);
     });
   </script>
 </body>
