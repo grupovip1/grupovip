@@ -1,74 +1,37 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>telegram vip</title>
+  
+  <title>Meu Site Responsivo</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
   <style>
-    body {
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-color: black;
-      color: white;
-      text-align: center;
-      font-size: 1em;
-      line-height: 1.8;
-    }
+   body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
 
-    img {
-      max-width: 110%; 
-      position:absoluta;
-      top: 60%; /* Posiciona a partir do topo */
-      left: 50%; /* Posiciona a partir da esquerda */
-      transform: translate(-50%, -50%); 
-      /* Ajustando o tamanho máximo das imagens */
-    }
+.imagem-principal {
+  background-image: url('caminho-da-imagem-principal.jpg');
+  background-size: cover;
+  background-position: center;
+  height: calc(100vh - 30px); /* Altura da tela menos 30px do topo */
+  margin-top: 30px; /* Distância do topo */
+}
 
-    .imagem-sobreposta {
-      max-width: 70%;
-      top: 50px;/* Largura da nova imagem */
-    }
+.imagem-sobreposta {
+  background-image: url('caminho-da-imagem-sobreposta.jpg');
+  background-size: cover;
+  background-position: center;
+  height: calc(100vh - 70px); /* Altura da tela menos 70px do topo */
+  margin-top: 70px; /* Distância do topo */
+}
 
-    .imagem-abaixo {
-      max-width: 67%; /* Largura da terceira imagem */
-      cursor: pointer;
-      animation: balanco 0.5s ease-in-out infinite alternate;
-      animation-delay: 1s;
-    }
-
-    @keyframes balanco {
-      0% { transform: translate(-50%, -50%) rotate(0deg); }
-      100% { transform: translate(-50%, -50%) rotate(4deg); }
-    }
-
-    .clicado {
-      animation: clicado 0.3s ease forwards;
-    }
-
-    @keyframes clicado {
-      100% { opacity: 0; transform: scale(0.8); }
-    }
+    
   </style>
 </head>
 <body>
-  <div class="container">
-    <img src="principal.jpg" alt="Imagem Principal">
-    <img class="imagem-sobreposta" src="titulo2.png" alt="Imagem Sobreposta">
-    <img class="imagem-abaixo" src="botao.jpg" alt="Imagem Abaixo" id="botao">
-  </div>
-  
-  <script>
-    const botao = document.getElementById('botao');
-
-    botao.addEventListener('click', function() {
-      botao.classList.add('clicado');
-      setTimeout(function() {
-        window.location.href = 'index2.html';
-      }, 300);
-    });
-  </script>
+  <div class="imagem-principal"><img src="principal.jpg> </div>
+  <div class="imagem-sobreposta"><img src="botao.jpg"> </div>
 </body>
 </html>
